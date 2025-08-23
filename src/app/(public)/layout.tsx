@@ -1,9 +1,10 @@
 import React from 'react'
+import Navbar from '@/components/layout/Navbar'
 
 const PublicLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
   return (
-    <div className="login-layout">
-      PublicLayout
+    <div className="public-layout bg-gray-100 h-svh">
+      <Navbar />
       {children}
     </div>
   )

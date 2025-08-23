@@ -13,7 +13,7 @@ const LoginPage = () => {
         <span className='text-xl font-semibold text-black'>Selamat Datang</span>
         <span className='text-sm text-gray-500'>Silahkan Sign In untuk melanjutkan</span>
       </div>
-      <Card className='p-7 shadow-none w-[360]'>
+      <Card className='p-7 shadow-none border border-gray-200 w-[360]'>
         <div className='flex flex-col gap-4'>
           <ComponentInputText label='Email' placeholder='Alamat Email' />
           <ComponentInputText label='Password' placeholder='Password' />

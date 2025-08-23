@@ -55,7 +55,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className='card'>
+    <div className='card shadow'>
       <Menubar
         model={items}
         start={start}
@@ -64,7 +64,7 @@ const Navbar = () => {
         pt={{
           menu: { className: 'flex gap-4' },
           content: { className: 'px-4 py-2' },
-          label: { className: 'text-black font-semibold' }
+          label: { className: 'text-black font-semibold my-1' }
         }}
       />
     </div>

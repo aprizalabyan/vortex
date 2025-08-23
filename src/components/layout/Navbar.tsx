@@ -44,7 +44,14 @@ const Navbar = () => {
     </div>
   )
   const end = (
-    <Button className='bg-[#5575A5] text-white px-4 py-2 rounded-full' label='Sign Up' rounded size='small' onClick={() => router.push('/login')} />
+    <Button
+      className='bg-[#5575A5] text-white px-4 py-2 rounded-full'
+      label='Sign Up'
+      rounded
+      size='small'
+      pt={{ label: { className: 'text-sm' } }}
+      onClick={() => router.push('/login')}
+    />
   );
 
   return (

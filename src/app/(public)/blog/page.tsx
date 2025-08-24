@@ -10,7 +10,6 @@ import BlogCard from '@/components/blog/Card'
 import BlogCardSaved from '@/components/blog/CardSaved'
 import { Paginator } from 'primereact/paginator'
 import { Chip } from 'primereact/chip'
-import { Divider } from 'primereact/divider'
 import { Button } from 'primereact/button'
 
 interface Post {
@@ -164,8 +163,8 @@ const BlogPage = () => {
               />
             </div>
           </div>
-          <Divider layout='vertical' />
-          <div className="side-content w-1/4">
+          <div className='border-l border-gray-200' />
+          <div className="side-content w-1/4 ms-4">
             <span className='text-black font-medium'>Recommend Tags</span>
             <div className="flex flex-wrap gap-2 my-4">
               {tagsLoading ? (

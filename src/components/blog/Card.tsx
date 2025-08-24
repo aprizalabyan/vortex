@@ -8,18 +8,25 @@ import TextBubbleIcon from '@/assets/icons/text-bubble.svg'
 import BookmarkIcon from '@/assets/icons/bookmark.svg'
 import DotsHorizontalIcon from '@/assets/icons/dots-horizontal.svg'
 
-const BlogCard = () => {
+interface BlogCardProps {
+  title: string;
+  description: string;
+  tags: string[];
+  reactions: any;
+}
+
+const BlogCard = ({ title, description, tags, reactions }: BlogCardProps) => {
   return (
     <Card className='shadow-none'>
       <div className="flex flex-col">
-        <Image alt='img' src='/logo.png' height='180' />
+        <Image alt='img' src='https://dummyjson.com/image/360x180?text=Image+View' height='180' width='100%' />
         <div className="flex flex-col gap-2 m-4">
           <div className="flex items-center text-[12px]">
             <Avatar image="https://primefaces.org/cdn/primereact/images/avatar/onyamalimba.png" shape="circle" pt={{ image: { className: 'w-6 h-6' } }} />
             <span>Jerome Bell</span>
           </div>
-          <span className='font-semibold text-black'>Title nh</span>
-          <p className='text-sm text-gray-900'>kajwdk lawdlk kadljwkl kjk jhdjakw jawjdhjj Title nh</p>
+          <span className='font-semibold text-black'>{title}</span>
+          <p className='text-sm text-gray-900'>{description.substring(0, 90) + '...'}</p>
           <div className="flex gap-4 text-sm text-gray-400">
             <div className="flex items-center gap-1">
               <CalendarIcon />
@@ -27,7 +34,7 @@ const BlogCard = () => {
             </div>
             <div className="flex items-center gap-1">
               <ThumbUpIcon />
-              <span>346</span>
+              <span>{reactions.likes}</span>
             </div>
             <div className="flex items-center gap-1">
               <TextBubbleIcon />

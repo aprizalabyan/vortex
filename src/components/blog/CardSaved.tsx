@@ -13,7 +13,7 @@ const BlogCardSaved = () => {
           <Avatar image="https://primefaces.org/cdn/primereact/images/avatar/onyamalimba.png" shape="circle" pt={{ image: { className: 'w-6 h-6' } }} />
           <span>Jerome Bell</span>
         </div>
-        <span className='font-semibold text-black'>Title nh</span>
+        <span className='font-semibold text-black'>Its an unfortunate reality that we dont teach people how to make money.</span>
         <div className="flex gap-4 text-sm text-gray-400">
           <div className="flex items-center gap-1">
             <CalendarIcon />

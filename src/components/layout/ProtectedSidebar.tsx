@@ -6,6 +6,9 @@ import { PanelMenu } from "primereact/panelmenu";
 import { Image } from 'primereact/image';
 import CubesVariantIcon from '@/assets/icons/cubes-variant.svg'
 import LayersIcon from '@/assets/icons/layers.svg'
+import { Button } from 'primereact/button';
+import { authService } from '@/services/auth.service'
+import { useRouter } from 'next/navigation'
 
 export type NavItem = {
   label: string;
@@ -19,6 +22,7 @@ const defaultModel: NavItem[] = [
 ];
 
 const ProtectedSidebar: React.FC<{ model?: NavItem[] }> = ({ model = defaultModel }) => {
+  const router = useRouter()
   const pathname = usePathname();
 
   const asTemplate = (item: any) => (
@@ -39,8 +43,17 @@ const ProtectedSidebar: React.FC<{ model?: NavItem[] }> = ({ model = defaultMode
     template: () => asTemplate(m)
   }));
 
+  const handleLogout = async (e: React.FormEvent) => {
+    try {
+      await authService.logout()
+      router.push('/login')
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   return (
-    <div className="h-full overflow-y-auto p-4">
+    <div className="h-full flex flex-col overflow-y-auto p-4">
       <div className='flex gap-1 mt-1 mb-6'>
         <Image alt='logo' src='/logo.svg' height='20' className='mr-1' />
         <span className='text-xl font-bold text-black'>Vortex</span>
@@ -49,6 +62,14 @@ const ProtectedSidebar: React.FC<{ model?: NavItem[] }> = ({ model = defaultMode
         model={mapped}
         className="w-full"
       />
+      <div className="flex flex-col justify-end mt-auto">
+        <Button
+          label='Logout'
+          rounded
+          className='text-red-600'
+          onClick={handleLogout}
+        />
+      </div>
     </div>
   )
 }
